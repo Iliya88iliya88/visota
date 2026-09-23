@@ -1,14 +1,14 @@
 :root {
-  --ink: #14201d;
-  --muted: #61706b;
-  --paper: #f3f1e9;
-  --white: #fffefa;
-  --line: #d7d8cf;
-  --green: #164a3b;
-  --green-dark: #0d3027;
-  --signal: #e46b36;
-  --signal-soft: #f3d4bf;
-  --shadow: 0 24px 60px rgba(15, 38, 31, .12);
+  --ink: #241b19;
+  --muted: #6b5e5a;
+  --paper: #f7f1ed;
+  --white: #fffaf6;
+  --line: #dfd0c9;
+  --green: #742820;
+  --green-dark: #201a17;
+  --signal: #d9432e;
+  --signal-soft: #f6c5aa;
+  --shadow: 0 24px 60px rgba(54, 24, 18, .15);
 }
 
 * { box-sizing: border-box; }
@@ -85,3 +85,59 @@ h1 em { color: var(--green); font-family: "PT Serif", serif; font-weight: 400; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.reveal { opacity: 1; transform: none; transition: none; } }
+
+/* Визуальная система по предоставленной визитке */
+.site-header { color: #fff; background: #000; border-bottom: 0; }
+.site-header .brand small { color: #fff; }
+.site-header .brand { text-align: center; }
+.site-header .brand-wording { display: flex; align-items: center; }
+.site-header .brand-wording b { display: block; color: #fff; font-family: "PT Serif", Georgia, serif; font-size: clamp(18px, 1.8vw, 28px); font-weight: 400; line-height: 1.1; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+.site-header .brand-mark { display: none; border-color: #fff; }
+.site-header .brand-mark i { border-color: #fff; }
+.site-header .main-nav a::after { background: #fff; }
+.site-header .header-contact, .site-header .menu-button { color: #fff; border-color: #fff; }
+.site-header .header-contact:hover { background: #fff; color: #000; }
+.hero { min-height: 0; display: block; background: #201a17; }
+.brand-scene { position: relative; width: 100%; aspect-ratio: 1570 / 1001; overflow: hidden; border: 0; background: #8b2828 url("assets/vysota-hero-integrated.png") center / cover no-repeat; }
+.scene-contact { position: absolute; z-index: 1; left: 0; right: 0; bottom: 5%; padding: 0 22px; display: flex; align-items: center; justify-content: center; color: #fff; }
+.contact-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.contact-stack a, .contact-stack span { color: #fff; -webkit-text-stroke: 1px #000; paint-order: stroke fill; text-shadow: 0 2px 5px rgba(0,0,0,.45); }
+.scene-contact span { font-size: clamp(29px, 4.1vw, 58px); line-height: 1; font-weight: 800; letter-spacing: -.04em; }
+.scene-contact a { font-size: clamp(32px, 4.8vw, 68px); line-height: 1; font-weight: 800; letter-spacing: -.04em; }
+.scene-contact a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.hero-copy { padding: 52px 8vw 62px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(270px, .9fr); gap: 0 5vw; align-items: center; color: #fffaf6; background: #8b2828; }
+.hero-copy .eyebrow { grid-column: 1 / -1; }
+.hero-copy h1 { grid-row: span 3; }
+.hero-copy .hero-actions { grid-column: 2; }
+.hero-copy .hero-note { grid-column: 2; }
+.hero-copy .eyebrow { color: #ffe0cb; }
+.hero-copy h1 { font-size: clamp(38px, 4.7vw, 68px); line-height: 1.02; overflow-wrap: anywhere; }
+.hero-copy h1 em { color: #ffe0cb; font-style: normal; }
+.hero-copy .hero-lead { color: #fff3ea; }
+.hero-copy .hero-note { color: #fff3ea; border-left-color: #ffe0cb; }
+.hero-copy .hero-note a, .contact-data a { text-decoration: underline; text-underline-offset: 4px; }
+.hero-copy .button.primary { color: #231a17; background: #fffaf6; }
+.hero-copy .button.primary:hover { background: #ffe0cb; }
+.hero-copy .button.secondary { color: #fffaf6; border-color: rgba(255, 250, 246, .85); }
+.diagnostic, .contact { background: linear-gradient(135deg, #351b18, #8e2c24); }
+.about-panel { background: linear-gradient(130deg, #201a17, #4c2520); }
+.case-photo { background-color: #8e2c24; }
+.case-photo.balcony { background: #9b523f; }
+.case-photo.roof { background: #52302d; }
+.knowledge { background: #f0e6df; }
+.article-dialog::backdrop { background: rgba(32, 18, 16, .76); }
+.article-dialog .article-summary { background: #f8e8dc; }
+@media (max-width: 980px) {
+  .site-header .main-nav { background: #000; border-bottom-color: #fff; }
+  .hero-copy { padding: 42px 7vw 60px; display: block; }
+  .hero-copy h1 { max-width: 780px; }
+}
+@media (max-width: 680px) {
+  .site-header .brand-wording b { font-size: 15px; letter-spacing: .025em; }
+  .scene-contact { bottom: 4%; padding: 0 16px; }
+  .scene-contact span { font-size: clamp(26px, 7.4vw, 38px); }
+  .scene-contact a { font-size: clamp(28px, 8.8vw, 43px); white-space: nowrap; }
+  .hero-copy { padding: 34px 22px 58px; }
+  .hero-copy h1 { font-size: clamp(38px, 10vw, 54px); }
+}
